@@ -244,10 +244,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                        		<a href="map.do"><i class="fa fa-dashboard fa-fw"></i> map</a>
+                        		<a href="main.do"><i class="fa fa-dashboard fa-fw"></i> 홈으로</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> 홈으로</a>
+                            <a href="detail.do"><i class="fa fa-dashboard fa-fw"></i> 상세정보</a>
                         </li>
                         <li>
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> QnA게시판</a>

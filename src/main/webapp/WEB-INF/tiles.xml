@@ -7,10 +7,13 @@
   <put-attribute name="nav" value="/WEB-INF/main/nav.jsp"></put-attribute>
   <put-attribute name="map" value="/WEB-INF/main/map.jsp"></put-attribute>
  </definition>
+ <definition name="detail" extends="main">
+ 	<put-attribute name="map" value="/WEB-INF/main/detail.jsp"></put-attribute>
+ </definition>
  <definition name="*/*" extends="main">
-  <put-attribute name="content" value="/WEB-INF/{1}/{2}.jsp"/>
+  <put-attribute name="map" value="/WEB-INF/{1}/{2}.jsp"/>
  </definition>
  <definition name="*/*/*" extends="main">
-  <put-attribute name="content" value="/WEB-INF/{1}/{2}/{3}.jsp"/>
+  <put-attribute name="map" value="/WEB-INF/{1}/{2}/{3}.jsp"/>
  </definition>
 </tiles-definitions>

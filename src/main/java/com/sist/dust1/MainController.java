@@ -16,4 +16,9 @@ public class MainController {
 	{
 		return "map";
 	}
+	@RequestMapping("detail.do")
+	public String main_detail()
+	{
+		return "main/detail";
+	}
 }
