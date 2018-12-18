@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- Controller등록 -->
+   <servlet>
+     <servlet-name>dispatcher</servlet-name>
+     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+     <init-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/config/application-*.xml</param-value>
+     </init-param>
+   </servlet>
+   <!-- URL 패턴 지정  *.do -->
+   <!--  
+        <servlet-name>aaa</servlet-name>-servlet.xml
+   -->
+   <servlet-mapping>
+      <servlet-name>dispatcher</servlet-name>
+      <url-pattern>*.do</url-pattern>
+   </servlet-mapping>
+   <!-- 한글 변환 
+        => Model을 처리 ==> request를 받아서 사용 
+        => Spring => request를 사용하는 것이 아니라 매개변수를 이용 
+         main.do?name=홍길동
+          => public String main_page(HttpServletRequest req)
+               {
+                    req.setCharacterEncoding("EUC-KR");
+                    String name=req.getParameter("name");
+               }
+            => public String main_page(String name)
+                 {
+                     
+                 }
+               public String main_page(MemberVO vo)
+                 {
+                     dao.insert(vo)
+                 }
+    -->
+   <filter> 
+		<filter-name>encodingFilter</filter-name> 
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
+		<init-param> 
+		    <!-- request.setCharacterEncoding("UTF-8") -->
+			<param-name>encoding</param-name> 
+			<param-value>UTF-8</param-value> 
+		</init-param> 
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+</web-app>
