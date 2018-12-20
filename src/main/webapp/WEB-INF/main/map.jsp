@@ -5,14 +5,325 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
- <script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/pareto.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script type="text/javascript">
+$(function(){
+	  var chart =   
+		// Create the chart
+		  Highcharts.chart('container', {
+		      chart: {
+		          type: 'column'
+		      },
+		      title: {
+		          text: 'Browser market shares. January, 2018'
+		      },
+		      subtitle: {
+		          text: 'Click the columns to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+		      },
+		      xAxis: {
+		          type: 'category'
+		      },
+		      yAxis: {
+		          title: {
+		              text: 'Total percent market share'
+		          }
+
+		      },
+		      legend: {
+		          enabled: false
+		      },
+		      plotOptions: {
+		          series: {
+		              borderWidth: 0,
+		              dataLabels: {
+		                  enabled: true,
+		                  format: '{point.y:.1f}%'
+		              }
+		          }
+		      },
+
+		      tooltip: {
+		          headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+		          pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+		      },
+
+		      "series": [
+		          {
+		              "name": "Browsers",
+		              "colorByPoint": true,
+		              "data": [
+		                  {
+		                      "name": "Chrome",
+		                      "y": 62.74,
+		                      "drilldown": "Chrome"
+		                  },
+		                  {
+		                      "name": "Firefox",
+		                      "y": 10.57,
+		                      "drilldown": "Firefox"
+		                  },
+		                  {
+		                      "name": "Internet Explorer",
+		                      "y": 7.23,
+		                      "drilldown": "Internet Explorer"
+		                  },
+		                  {
+		                      "name": "Safari",
+		                      "y": 5.58,
+		                      "drilldown": "Safari"
+		                  },
+		                  {
+		                      "name": "Edge",
+		                      "y": 4.02,
+		                      "drilldown": "Edge"
+		                  },
+		                  {
+		                      "name": "Opera",
+		                      "y": 1.92,
+		                      "drilldown": "Opera"
+		                  },
+		                  {
+		                      "name": "Other",
+		                      "y": 7.62,
+		                      "drilldown": null
+		                  }
+		              ]
+		          }
+		      ],
+		      "drilldown": {
+		          "series": [
+		              {
+		                  "name": "Chrome",
+		                  "id": "Chrome",
+		                  "data": [
+		                      [
+		                          "v65.0",
+		                          0.1
+		                      ],
+		                      [
+		                          "v64.0",
+		                          1.3
+		                      ],
+		                      [
+		                          "v63.0",
+		                          53.02
+		                      ],
+		                      [
+		                          "v62.0",
+		                          1.4
+		                      ],
+		                      [
+		                          "v61.0",
+		                          0.88
+		                      ],
+		                      [
+		                          "v60.0",
+		                          0.56
+		                      ],
+		                      [
+		                          "v59.0",
+		                          0.45
+		                      ],
+		                      [
+		                          "v58.0",
+		                          0.49
+		                      ],
+		                      [
+		                          "v57.0",
+		                          0.32
+		                      ],
+		                      [
+		                          "v56.0",
+		                          0.29
+		                      ],
+		                      [
+		                          "v55.0",
+		                          0.79
+		                      ],
+		                      [
+		                          "v54.0",
+		                          0.18
+		                      ],
+		                      [
+		                          "v51.0",
+		                          0.13
+		                      ],
+		                      [
+		                          "v49.0",
+		                          2.16
+		                      ],
+		                      [
+		                          "v48.0",
+		                          0.13
+		                      ],
+		                      [
+		                          "v47.0",
+		                          0.11
+		                      ],
+		                      [
+		                          "v43.0",
+		                          0.17
+		                      ],
+		                      [
+		                          "v29.0",
+		                          0.26
+		                      ]
+		                  ]
+		              },
+		              {
+		                  "name": "Firefox",
+		                  "id": "Firefox",
+		                  "data": [
+		                      [
+		                          "v58.0",
+		                          1.02
+		                      ],
+		                      [
+		                          "v57.0",
+		                          7.36
+		                      ],
+		                      [
+		                          "v56.0",
+		                          0.35
+		                      ],
+		                      [
+		                          "v55.0",
+		                          0.11
+		                      ],
+		                      [
+		                          "v54.0",
+		                          0.1
+		                      ],
+		                      [
+		                          "v52.0",
+		                          0.95
+		                      ],
+		                      [
+		                          "v51.0",
+		                          0.15
+		                      ],
+		                      [
+		                          "v50.0",
+		                          0.1
+		                      ],
+		                      [
+		                          "v48.0",
+		                          0.31
+		                      ],
+		                      [
+		                          "v47.0",
+		                          0.12
+		                      ]
+		                  ]
+		              },
+		              {
+		                  "name": "Internet Explorer",
+		                  "id": "Internet Explorer",
+		                  "data": [
+		                      [
+		                          "v11.0",
+		                          6.2
+		                      ],
+		                      [
+		                          "v10.0",
+		                          0.29
+		                      ],
+		                      [
+		                          "v9.0",
+		                          0.27
+		                      ],
+		                      [
+		                          "v8.0",
+		                          0.47
+		                      ]
+		                  ]
+		              },
+		              {
+		                  "name": "Safari",
+		                  "id": "Safari",
+		                  "data": [
+		                      [
+		                          "v11.0",
+		                          3.39
+		                      ],
+		                      [
+		                          "v10.1",
+		                          0.96
+		                      ],
+		                      [
+		                          "v10.0",
+		                          0.36
+		                      ],
+		                      [
+		                          "v9.1",
+		                          0.54
+		                      ],
+		                      [
+		                          "v9.0",
+		                          0.13
+		                      ],
+		                      [
+		                          "v5.1",
+		                          0.2
+		                      ]
+		                  ]
+		              },
+		              {
+		                  "name": "Edge",
+		                  "id": "Edge",
+		                  "data": [
+		                      [
+		                          "v16",
+		                          2.6
+		                      ],
+		                      [
+		                          "v15",
+		                          0.92
+		                      ],
+		                      [
+		                          "v14",
+		                          0.4
+		                      ],
+		                      [
+		                          "v13",
+		                          0.1
+		                      ]
+		                  ]
+		              },
+		              {
+		                  "name": "Opera",
+		                  "id": "Opera",
+		                  "data": [
+		                      [
+		                          "v50.0",
+		                          0.96
+		                      ],
+		                      [
+		                          "v49.0",
+		                          0.82
+		                      ],
+		                      [
+		                          "v12.1",
+		                          0.14
+		                      ]
+		                  ]
+		              }
+		          ]
+		      }
+		  });
+		  
+});  
+</script>
 </head>
 <body>
 <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
+                    <h1 class="page-header">메인페이지</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -82,7 +393,7 @@
                                 <div class="clearfix"></div>
                             </div>
                         </a>
-                    </div>
+                    </div> 
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-red">
@@ -93,8 +404,8 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">13</div>
-                                    <div>Support Tickets!</div>
-                                </div>
+                                    <div>Support Tickets!</div>    
+                                </div>    
                             </div>
                         </div>
                         <a href="#">
@@ -130,7 +441,7 @@
 											<area alt="영등포구. 생활지도로 이동. 원하시는 지역을 선택하세요." coords="129,204,169,234,188,232,200,236,204,241,202,244,210,260,183,268,172,292,164,298,157,309,148,303,145,279,132,270,130,256,140,243,140,239,132,223" shape="poly" target="_blank" title="새창열림" href="http://gis.seoul.go.kr/SeoulGis/Naver/newLifeMap.jsp?mode=mainMove&amp;query=%EC%98%81%EB%93%B1%ED%8F%AC%EA%B5%AC&amp;tr_code=area" onmouseover="fn_ShowSeoulGu(10);" onfocus="fn_ShowSeoulGu(10);" onblur="fn_SeoulGuOut()" onmouseout="fn_SeoulGuOut()">
 											<area alt="강서구. 생활지도로 이동. 원하시는 지역을 선택하세요." coords="43,158,46,153,60,157,128,205,132,222,124,223,116,216,111,227,111,236,114,236,110,250,90,251,84,246,83,228,75,223,67,234,57,233,53,230,43,238,38,237,36,231,28,227,18,226,11,217,11,214,15,214,21,209,20,203,29,195,31,186,37,186,38,182,47,171" shape="poly" target="_blank" title="새창열림" href="http://gis.seoul.go.kr/SeoulGis/Naver/newLifeMap.jsp?mode=mainMove&amp;query=%EA%B0%95%EC%84%9C%EA%B5%AC&amp;tr_code=area" onmouseover="fn_ShowSeoulGu(11);" onfocus="fn_ShowSeoulGu(11);" onblur="fn_SeoulGuOut()" onmouseout="fn_SeoulGuOut()">
 											<area alt="용산구. 생활지도로 이동. 원하시는 지역을 선택하세요." coords="203,242,219,227,219,219,225,215,230,214,234,217,240,214,250,222,264,221,264,224,261,228,275,246,278.246.277,249,250,270,233,272,212,263" shape="poly" target="_blank" title="새창열림" href="http://gis.seoul.go.kr/SeoulGis/Naver/newLifeMap.jsp?mode=mainMove&amp;query=%EC%9A%A9%EC%82%B0%EA%B5%AC&amp;tr_code=area" onmouseover="fn_ShowSeoulGu(12);" onfocus="fn_ShowSeoulGu(12);" onblur="fn_SeoulGuOut()" onmouseout="fn_SeoulGuOut()">
-											<area alt="마포구. 생활지도로 이동. 원하시는 지역을 선택하세요." coords="133,167,154,187,170,203,184,222,210,222,217,214,217,226,203,240,197,234,191,231,167,233,112,187,124,186,130,170" shape="poly" target="_blank" title="새창열림" href="http://gis.seoul.go.kr/SeoulGis/Naver/newLifeMap.jsp?mode=mainMove&amp;query=%EB%A7%88%ED%8F%AC%EA%B5%AC&amp;tr_code=area" onmouseover="fn_ShowSeoulGu(13);" onfocus="fn_ShowSeoulGu(13);" onblur="fn_SeoulGuOut()" onmouseout="fn_SeoulGuOut()">
+											<area alt="마포구. 생활지도로 이동. 원하시는 지역을 선택하세요." coords="133,167,154,187170,203,184,222,210,222,217,214,217,226,203,240,197,234,191,231,167,233,112,187,124,186,130,170" shape="poly" target="_blank" title="새창열림" href="http://gis.seoul.go.kr/SeoulGis/Naver/newLifeMap.jsp?mode=mainMove&amp;query=%EB%A7%88%ED%8F%AC%EA%B5%AC&amp;tr_code=area" onmouseover="fn_ShowSeoulGu(13);" onfocus="fn_ShowSeoulGu(13);" onblur="fn_SeoulGuOut()" onmouseout="fn_SeoulGuOut()">
 											<area alt="광진구. 생활지도로 이동. 원하시는 지역을 선택하세요." coords="336,208,351,194,355,196,368,189,371,191,371,199,366,206,370,210,380,210,380,219,361,245,352,252,329,254,317,247,323,228," shape="poly" target="_blank" title="새창열림" href="http://gis.seoul.go.kr/SeoulGis/Naver/newLifeMap.jsp?mode=mainMove&amp;query=%EA%B4%91%EC%A7%84%EA%B5%AC&amp;tr_code=area" onmouseover="fn_ShowSeoulGu(14);" onfocus="fn_ShowSeoulGu(14);" onblur="fn_SeoulGuOut()" onmouseout="fn_SeoulGuOut()">
 											<area alt="성동구. 생활지도로 이동. 원하시는 지역을 선택하세요." coords="263,228,268,219,281,195,283,193,285,193,287,195,296,195,305,189,313,198,316,198,324,206,333,207,333,209,322,228,314,249,307,245,297,236,275,245,263,228,266,223,280,196,284,192" shape="poly" target="_blank" title="새창열림" href="http://gis.seoul.go.kr/SeoulGis/Naver/newLifeMap.jsp?mode=mainMove&amp;query=%EC%84%B1%EB%8F%99%EA%B5%AC&amp;tr_code=area" onmouseover="fn_ShowSeoulGu(15);" onfocus="fn_ShowSeoulGu(15);" onblur="fn_SeoulGuOut()" onmouseout="fn_SeoulGuOut()">
 											<area alt="중구. 생활지도로 이동. 원하시는 지역을 선택하세요." coords="219,211,225,206,224,201,229,195,238,195,243,198,258,198,261,195,271,195,274,193,280,193,277,197,265,221,264,219,251,222,240,213,234,215,229,213,223,214,219,217" shape="poly" target="_blank" title="새창열림" href="http://gis.seoul.go.kr/SeoulGis/Naver/newLifeMap.jsp?mode=mainMove&amp;query=%EC%A4%91%EA%B5%AC&amp;tr_code=area" onmouseover="fn_ShowSeoulGu(16);" onfocus="fn_ShowSeoulGu(16);" onblur="fn_SeoulGuOut()" onmouseout="fn_SeoulGuOut()">
@@ -221,7 +532,7 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
         </div>
         <!-- /#page-wrapper -->
-
+     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     </div>
     <!-- /#wrapper -->
    

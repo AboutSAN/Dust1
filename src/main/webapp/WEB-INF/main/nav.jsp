@@ -15,7 +15,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">미세하게 맑게</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -229,6 +229,9 @@
             </ul>
             <!-- /.navbar-top-links -->
 
+			<div>
+			 <img src="image/logo.png" style="width:100%">
+			</div>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -247,10 +250,10 @@
                         		<a href="main.do"><i class="fa fa-dashboard fa-fw"></i> 홈으로</a>
                         </li>
                         <li>
-                            <a href="detail.do"><i class="fa fa-dashboard fa-fw"></i> 상세정보</a>
+                            <a href="gudetail.do"><i class="fa fa-dashboard fa-fw"></i> 상세정보</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> QnA게시판</a>
+                            <a href="list.do"><i class="fa fa-dashboard fa-fw"></i> 게시판</a>
                         </li>
                     </ul>
                 </div>
