@@ -7,7 +7,7 @@
          spring-boot(XML(X),Annotation)
           블록체인
          AI(딥러닝,머신러닝)
-           파이썬    
+           파이썬     
  --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

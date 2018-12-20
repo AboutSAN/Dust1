@@ -14,7 +14,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
+                </button> 
                 <a class="navbar-brand" href="index.html">미세하게 맑게</a>
             </div>
             <!-- /.navbar-header -->

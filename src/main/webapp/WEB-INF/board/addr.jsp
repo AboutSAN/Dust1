@@ -11,7 +11,7 @@
    <table border=1 width=350>
      <tr>
         <th>이름</th>
-        <th>주소</th>
+        <th>주소</th> 
         <th>나이</th>
      </tr>
      <c:forEach var="vo" items="${list }">

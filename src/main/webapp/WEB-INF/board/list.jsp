@@ -62,7 +62,7 @@ h2{
                </select>
                <input type=text name=ss size=10>
                <input type=submit value="찾기" class="btn btn-xs" style="background-color:#4682B4; color:white"">
-             </td>
+             </td> 
              <td class="text-right">
                  <a href="#" class="btn btn-xs" style="background-color:#4682B4; color:white">이전</a>
                        ${curpage } page / ${totalpage } pages

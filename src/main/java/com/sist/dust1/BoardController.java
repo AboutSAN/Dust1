@@ -40,7 +40,7 @@ import java.net.*;
 @Controller
 public class BoardController {
    // BoardDAO객체를 얻어 온다
-	@Autowired
+	@Autowired 
 	private BoardDAO dao;
 	
 	

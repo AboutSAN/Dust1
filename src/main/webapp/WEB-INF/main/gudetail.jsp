@@ -13,7 +13,7 @@
 			<div class="panel panel-info">
 		      <div class="panel-heading">마포구</div>
 		      <div class="panel-body">
-		      		<table class="table table-hover">
+		      		<table class="table table-hover"> 
 		      			<tr>
 		      				<td class="info text-center" width=50%>현재 미세먼지 (시간 넣을 곳)</td>
 		      				<td class="info text-center" width=50%>행동요령</td>

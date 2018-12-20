@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sist.dao.*;
 // Update,Delete => 스크립트 
 // sendRedirect => request의 데이터를 전송할 수 있다
-@RestController
+@RestController 
 public class BoardRestController {
 	@Autowired
 	private BoardDAO dao;

@@ -14,7 +14,7 @@ public class MainController {
 	@RequestMapping("map.do")
 	public String main_map()
 	{
-		return "map";
+		return "map"; 
 	}
 	@RequestMapping("gudetail.do")
 	public String main_detail()

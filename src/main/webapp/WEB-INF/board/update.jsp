@@ -15,7 +15,7 @@ td,th{
    font-size: 9pt;
 }
 h2{
-    text-align: center;
+    text-align: center; 
 }
 </style>
 </head>

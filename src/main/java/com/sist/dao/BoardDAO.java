@@ -19,7 +19,7 @@ public class BoardDAO {
 	   List<BoardVO> list=new ArrayList<BoardVO>();
 	   Query query=new Query();// {} ,{} ,{} ==> 조건 (WHERE)
 	   int rowSize=10;
-	   int skip=(rowSize*page)-rowSize;
+	   int skip=(rowSize*page)-rowSize; 
 	   /*
 	    *   0
 	    *   -

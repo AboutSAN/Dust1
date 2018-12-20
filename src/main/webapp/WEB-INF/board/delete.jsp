@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <style type="text/css">
 .row {
-    margin: 0px auto;
+    margin: 0px auto; 
     width:350px;
 }
 td,th{

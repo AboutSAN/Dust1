@@ -11,7 +11,7 @@
     margin: 0px auto;
     width:700px;
 }
-td,th{
+td,th{ 
    font-size: 9pt;
 }
 h2{
