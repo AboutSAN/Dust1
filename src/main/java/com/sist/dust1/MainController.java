@@ -34,9 +34,9 @@ public class MainController {
 	}
 	
 	
-	@RequestMapping("gudetail.do")
+	/*@RequestMapping("gudetail.do")
 	public String main_detail()
 	{
 		return "main/gudetail";
-	}
+	}*/
 }
