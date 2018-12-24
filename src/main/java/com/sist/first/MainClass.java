@@ -21,7 +21,7 @@ public class MainClass {
 		ApplicationContext app=new ClassPathXmlApplicationContext("app.xml");
 		MainClass mc=app.getBean("mainClass",MainClass.class);
 		try
-		{
+		{  
 			    /*List<CategoryVO> list=mc.mgr.categoryAllData();
 			    for(CategoryVO vo:list)
 			    {
