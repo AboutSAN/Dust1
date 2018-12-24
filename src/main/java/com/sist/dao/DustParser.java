@@ -18,11 +18,14 @@ public class DustParser {
 	
 	@Autowired
 	private DustDAO dao;
+	
 	public static void main(String[] args)
 	{
-		DustParser dp=new DustParser();
+		String[] xml={"application-context.xml","application-mongo.xml"};
+		ApplicationContext app=new ClassPathXmlApplicationContext(xml);
+		DustParser dp=(DustParser)app.getBean("dustParser");
+			
 		dp.dustAllData();
-
 	}
 	public List<DustVO> dustAllData()
 	{
@@ -51,8 +54,8 @@ public class DustParser {
 				System.out.println(loc);
 				//System.out.println(result);
 				JSONParser parser = new JSONParser();
-				JSONObject obj = (JSONObject) parser.parse(result);
-				
+				//JSONObject obj = (JSONObject) parser.parse(result);
+				JSONObject obj = (JSONObject)parser.parse(result);
 				// Top레벨 단계인 list 키를 가지고 데이터를 파싱합니다.
 				JSONArray list = (JSONArray) obj.get("list");
 				JSONObject dust; 
@@ -60,6 +63,7 @@ public class DustParser {
 				// 필요한 데이터만 가져오려고합니다.
 			   for(int i=0;i<list.size();i++)
 			   {
+				   try{
 	          dust=(JSONObject)list.get(i);
 	          String so2Value = (dust.get("so2Value").toString()); //실수로된 값과 정수로된 값이 둘다 있어서 실수로 통일했습니다.
 	          String coValue = (dust.get("coValue").toString()); 
@@ -69,13 +73,13 @@ public class DustParser {
 	          String pm10Grade = (dust.get("pm10Grade").toString());
 	          String dataTime = (dust.get("dataTime").toString());
 	          
-	          System.out.print("   dataTime : "+ dataTime);
+	          /*System.out.print("   dataTime : "+ dataTime);
 	          System.out.print("   일산화탄소 농도 : "+ coValue);
 	          System.out.print("   오존 농도 : "+ o3Value);
 	          System.out.print("   이산화질소 농도 : "+ no2Value);
 	          System.out.print("   미세먼지(PM10) 농도 : "+ pm10Value);
 	          System.out.print("   미세먼지(PM10) 지수 : "+ pm10Grade);
-	          System.out.println();
+	          System.out.println();*/
 	          
 	          DustVO vo=new DustVO();
 	          vo.setLoc(loc);
@@ -86,8 +90,12 @@ public class DustParser {
 	          vo.setNo2Value(no2Value);
 	          vo.setPm10Value(pm10Value);
 	          vo.setPm10Grade(pm10Grade);
-	          
-	          dao.dustInsert(vo);
+	          list1.add(vo);
+	          //dao.dustInsert(vo);
+			   }catch(Exception ex)
+				{
+				   ex.printStackTrace();
+				}
 			   }
 	        }
 	          br.close();

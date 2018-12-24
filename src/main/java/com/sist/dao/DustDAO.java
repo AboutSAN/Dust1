@@ -1,12 +1,17 @@
 package com.sist.dao;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.BasicQuery;
 import org.springframework.stereotype.Repository;
 
+
 @Repository
+@Scope("prototype")
 public class DustDAO {
 	@Autowired
 	private DustParser dp;
@@ -15,7 +20,15 @@ public class DustDAO {
 	
 	public void dustInsert(DustVO vo)
 	{
-		mt.insert(vo,"dust");
+		mt.getCollection("dust").drop();
+		mt.createCollection("dust");
+		List<DustVO> list=dp.dustAllData();
+		for(DustVO vo1:list)
+		{
+			mt.insert(vo1,"dust");
+		}
+		
+		//mt.insert(vo,"dust");
 	}
 	public DustVO guDustData(String guname)
 	{
