@@ -27,7 +27,7 @@ public class MainClass {
 			    {
 			    	mc.dao.foodInsert(vo);
 			    }*/
-			    mc.dp.detailAllData("126508");
+			    mc.dp.detailAllData("126508");  
 		}catch(Exception ex)
 		{
 			ex.printStackTrace();
